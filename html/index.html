@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mx-auto px-5 xl:px-0 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div class="product">
+            <img src="../assets/images/look.webp" alt="">
+            <div class="dot-container"></div>
+        </div>
+        <div class="flex items-center justify-center">
+            <div class="max-w-[300px] mx-auto w-full text-center">
+                <h2 class="text-3xl text-center">Byte Selection</h2>
+                <p class="text-sm mt-2">Byte's selection for you</p>
+                <a href="#" class="block max-w-max pb-1 border-b border-black mx-auto mt-5">Shop now</a>
+                <div class="border mt-5 border-black p-5 relative">
+                    <div class="slider-container">
+                        <div class="slider flex overflow-x-auto ">
+
+                        </div>
+                        <div class="prev cursor-pointer absolute -left-6 top-1/2 -translate-y-1/2"><i class="fa fa-chevron-left text-xl"></i></div>
+                        <div class="next cursor-pointer absolute -right-6 top-1/2 -translate-y-1/2"><i class="fa fa-chevron-right text-xl"></i></div>
+                    </div>
+                </div>
+                <div id="slideIndex" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/20b9420eb8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

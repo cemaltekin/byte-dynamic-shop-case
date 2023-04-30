@@ -1,0 +1,93 @@
+.slider {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider .item {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+
+.product {
+  position: relative;
+}
+.product .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 70%;
+  position: absolute;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.product .dot::after {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  background-color: white;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.product .dot.active {
+  border-color: white;
+  opacity: 100%;
+  animation: dotscale 1s infinite;
+}
+.product .dot.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  animation: shockwave 1s 0.5s ease-out;
+}
+.product .dot.shoes {
+  left: 60%;
+  top: 90%;
+}
+.product .dot.jacket {
+  left: 44%;
+  top: 20%;
+}
+.product .dot.trousers {
+  left: 63%;
+  top: 60%;
+}
+.product .dot.waistcoat {
+  left: 58%;
+  top: 35%;
+}
+
+@keyframes dotscale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shockwave {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+  95% {
+    box-shadow: 0 0 50px transparent, inset 0 0 30px transparent;
+  }
+  100% {
+    transform: scale(2.25);
+  }
+}/*# sourceMappingURL=style.css.map */

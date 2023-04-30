@@ -1,0 +1,110 @@
+.slider {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.slider .item {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+}
+
+.product {
+    position: relative;
+
+    .dot {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba($color: #000000, $alpha: .5);
+        opacity: 70%;
+        position: absolute;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &::after {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            content: '';
+            background-color: white;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        &.active {
+            border-color: white;
+            opacity: 100%;
+            animation: dotscale 1s infinite;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                border-radius: 50%;
+                -webkit-animation: shockwave 1s .5s ease-out;
+                animation: shockwave 1s .5s ease-out;
+            }
+        }
+
+        &.shoes {
+            left: 60%;
+            top: 90%;
+        }
+
+        &.jacket {
+            left: 44%;
+            top: 20%;
+        }
+
+        &.trousers {
+            left: 63%;
+            top: 60%;
+        }
+
+        &.waistcoat {
+            left: 58%;
+            top: 35%;
+        }
+    }
+}
+
+@keyframes dotscale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shockwave {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    95% {
+        box-shadow: 0 0 50px transparent, inset 0 0 30px transparent;
+    }
+
+    100% {
+        -webkit-transform: scale(2.25);
+        transform: scale(2.25);
+    }
+}
